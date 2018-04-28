@@ -1,18 +1,27 @@
 package pl.sda.poznan;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import pl.sda.poznan.util.DbUtils;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Program {
+public class Program extends Application {
 
-  public static void main(String[] args) throws SQLException {
-    ResultSet rs = DbUtils.getConnection().createStatement()
-        .executeQuery("SELECT COUNT(ID) FROM users");
-
-    rs.next();
-    int count = rs.getInt(1);
-    System.out.println(count);
+  public void start(Stage primaryStage) throws Exception {
+    Parent root = FXMLLoader.load(
+            getClass()
+            .getClassLoader()
+            .getResource("view/MainWindow.fxml")
+        );
+    primaryStage.setTitle("Hello World");
+    primaryStage.setScene(new Scene(root, 300, 275));
+    primaryStage.show();
   }
+
+  public static void main(String[] args) {
+    launch(args);
+  }
+
+
 }
