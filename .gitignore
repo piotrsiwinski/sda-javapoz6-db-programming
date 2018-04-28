@@ -50,3 +50,13 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 db.properties
+.idea/sonarlint/
+jdbc-app/src/test/
+jdbc-app/target/classes/db.properties.template
+jdbc-app/target/classes/pl/
+jdbc-app/target/jdbc-app-1.0-SNAPSHOT.jar
+jdbc-app/target/maven-archiver/
+jdbc-app/target/maven-status/
+jdbc-intro/src/main/resources/
+jdbc-intro/src/test/
+jdbc-intro/target/
