@@ -60,3 +60,10 @@ jdbc-app/target/maven-status/
 jdbc-intro/src/main/resources/
 jdbc-intro/src/test/
 jdbc-intro/target/
+.idea/encodings.xml
+jdbc-app/target/classes/scripts.sql
+jdbc-app/target/classes/view/
+jdbc-app/target/generated-sources/
+jpa-hibernate-intro/jpahibernateintro.iml
+jpa-hibernate-intro/src/test/
+jpa-hibernate-intro/target/
