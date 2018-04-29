@@ -1,9 +1,10 @@
 package pl.sda.poznan;
 
-import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import pl.sda.poznan.model.Category;
+import pl.sda.poznan.model.Product;
 
 public class Program {
 
@@ -11,17 +12,31 @@ public class Program {
     EntityManagerFactory factory = Persistence.createEntityManagerFactory("UsersDB");
     EntityManager entityManager = factory.createEntityManager();
 
+    // todo 1 - kategoria
+    Category category = new Category();
+    category.setName("Laptops");
 
-    Message hello = new Message();
-    hello.setMessage("Hello hibernate");
-    hello.setDate(new Date());
+    //todo 2 - 3 produkty
+    Product sony = new Product();
+    sony.setName("SONY VAIO");
 
-    Message anotherMessage = new Message();
-    anotherMessage.setMessage("just another message");
+    Product msi = new Product();
+    msi.setName("MSI");
+
+    Product dell = new Product();
+    dell.setName("dell");
+
+    //todo 3- ustawienie kategorii w produktach
+    sony.setCategory(category);
+    msi.setCategory(category);
+    dell.setCategory(category);
 
     entityManager.getTransaction().begin();
-    entityManager.persist(hello);
-    entityManager.persist(anotherMessage);
+    entityManager.persist(category);
+    entityManager.persist(msi);
+    entityManager.persist(sony);
+    entityManager.persist(dell);
+
     entityManager.getTransaction().commit();
   }
 
